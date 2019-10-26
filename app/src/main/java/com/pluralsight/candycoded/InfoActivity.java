@@ -26,6 +26,7 @@ public class InfoActivity extends AppCompatActivity {
     }
 
 
+    //Method to launch the map
     public void createMapIntent(View view) {
         Uri mapUri = Uri.parse("geo:0,0?q=618 E South St Orlando, FL 32801");
         Intent mapIntent = new Intent(Intent.ACTION_VIEW, mapUri);
@@ -35,7 +36,10 @@ public class InfoActivity extends AppCompatActivity {
         }
     }
 
-    // ***
-    // TODO - Task 3 - Launch the Phone Activity
-    // ***
+    //Method to launch the phone activity
+    public void createPhoneIntent(View view) {
+        Intent dialIntent = new Intent(Intent.ACTION_DIAL);
+        dialIntent.setData(Uri.parse("tel:0123456789"));
+        startActivity(dialIntent);
+    }
 }
